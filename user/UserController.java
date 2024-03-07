@@ -1,5 +1,6 @@
 package user;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -90,4 +91,11 @@ public class UserController {
         return service.getUserMap();
     }
 
+    public String findUsernameInDB() {
+        return service.findUsernameInDB();
+    }
+
+    public List<?> findUsers() throws SQLException {
+        return service.findUsers();
+    }
 }

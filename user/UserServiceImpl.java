@@ -4,6 +4,7 @@ import common.AbstractService;
 import common.UtilServiceImpl;
 import enums.Messenger;
 
+import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -12,11 +13,15 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
     private static UserServiceImpl instance = new UserServiceImpl();
     Map<String, User> users;
+    UserRepository userRepository;
 
     private UserServiceImpl(){
         this.users = new HashMap<>();
+        this.userRepository = UserRepository.getInstance();
     }
     public static UserServiceImpl getInstance(){return instance;}
+
+
     @Override
     public Messenger save(User user) {
         users.put(user.getUsername(), user);
@@ -119,6 +124,16 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     @Override
     public Map<String, ?> getUserMap() {
         return users;
+    }
+
+    @Override
+    public String findUsernameInDB() {
+        return userRepository.test();
+    }
+
+    @Override
+    public List<?> findUsers() throws SQLException {
+        return userRepository.findUsers();
     }
 
     @Override
