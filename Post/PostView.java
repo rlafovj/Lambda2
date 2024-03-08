@@ -1,6 +1,7 @@
 package Post;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class PostView {
@@ -17,7 +18,7 @@ public class PostView {
           return;
         case "1":
           System.out.println("1-모든 게시글 확인");
-          pCtrl.findAllPost();
+          pCtrl.findAll().forEach(i-> System.out.println(i));
           break;
         case "2":
           System.out.println("2-");

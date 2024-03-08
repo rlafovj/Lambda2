@@ -14,20 +14,20 @@ public class Main {
     Scanner sc = new Scanner(System.in);
 
     while (true){
-      System.out.println("=== 0-Exit " +
-              "1-User " +
-              "2-Board " +
-              "3-Account " +
-              "4-Crawler " +
-              "5-Post" +
+      System.out.println("=== x-Exit " +
+              "u-User " +
+              "b-Board " +
+              "a-Account " +
+              "c-Crawler " +
+              "p-Post" +
               "===");
       switch (sc.next()){
-        case "0":  return;
-        case "1": UserView.main(sc);break;
-        case "2": BoardView.main(); break;
-        case "3": AccountView.main(sc); break;
-        case "4": CrawlerView.main(sc); break;
-        case "5": PostView.main(sc); break;
+        case "x":  return;
+        case "u": UserView.main(sc);break;
+        case "b": BoardView.main(); break;
+        case "a": AccountView.main(sc); break;
+        case "c": CrawlerView.main(sc); break;
+        case "p": PostView.main(sc); break;
       }
     }
   }

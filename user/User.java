@@ -12,7 +12,7 @@ public class User {
   private String name;
   private String ssn;
   private String phoneNumber;
-  private String address;
+  private String addressID;
   private String job;
   private double height;
   private double weight;
@@ -27,7 +27,7 @@ public class User {
     this.name = name;
     this.ssn = ssn;
     this.phoneNumber = phoneNumber;
-    this.address = address;
+
     this.job = job;
     this.height = height;
     this.weight = weight;
@@ -45,7 +45,7 @@ public class User {
             ", name='" + name + '\n' +
             ", ssn='" + ssn + '\n' +
             ", phoneNumber='" + phoneNumber + '\n' +
-            ", address='" + address + '\n' +
+            ", address='" + addressID + '\n' +
             ", job='" + job + '\n' +
             '}';
   }

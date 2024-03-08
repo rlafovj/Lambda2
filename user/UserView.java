@@ -17,10 +17,13 @@ public class UserView {
                     "3-ID검색\n " +
                     "4-비번변경\n" +
                     "5-탈퇴\n " +
-                    "6-회원목록\n " +
+                    "ls-회원목록\n " +
                     "7-이름검색\n" +
                     "8-직업검색\n" +
-                    "9-회원수");
+                    "9-회원수\n" +
+                    "touch-테이블 생성\n" +
+                    "rm-테이블 삭제\n" +
+                    "");
             switch (scanner.next()){
                 case "0":
                     System.out.println("종료");return;
@@ -46,7 +49,7 @@ public class UserView {
                     System.out.println("5-탈퇴");
                     System.out.println(controller.delete(scanner));
                     break;
-                case "6":
+                case "ls":
                     System.out.println("6-회원목록");
 //                    Map<String, ?> users = controller.getUserMap();
 //                    users.forEach((k,v)->{
@@ -71,6 +74,16 @@ public class UserView {
                     System.out.println("9-회원수");
                     String numberOfUsers = String.valueOf(controller.count());
                     System.out.println("회원수 "+numberOfUsers);
+                    break;
+                case "touch":
+                    System.out.println("테이블 생성");
+
+                    System.out.println("테이블 생성 성공");
+                    break;
+                case "rm":
+                    System.out.println("테이블 삭제");
+
+                    System.out.println("테이블 삭제 성공");
                     break;
 
 

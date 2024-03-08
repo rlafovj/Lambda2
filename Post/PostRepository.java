@@ -1,6 +1,8 @@
 package Post;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PostRepository {
   private static PostRepository instance;
@@ -37,5 +39,28 @@ public class PostRepository {
       }
       while (resultSet.next());
     }
+  }
+
+  public List<?> findAll() throws SQLException {
+    List<?> ls = new ArrayList<>();
+    String sql = "select * from posts";
+
+    PreparedStatement pstmt = connection.prepareStatement(sql);
+    ResultSet resultSet = pstmt.executeQuery();
+    if(resultSet.next()){
+      do{
+//        System.out.printf("ID : %d\t Title : %s\t Content : %s\t Writer : %s\n",
+        Post p = Post.builder()
+                .id(resultSet.getLong("id"))
+                .title(resultSet.getString("title"))
+                .content(resultSet.getString("content"))
+                .writer(resultSet.getString("writer"))
+                .registerDate(resultSet.getString("registerDate"))
+                .build();
+
+      }
+      while (resultSet.next());
+    } else System.out.println("No Data");
+    return ls;
   }
 }
