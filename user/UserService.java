@@ -17,4 +17,7 @@ public interface UserService {
     String findUsernameInDB();
 
     List<?> findUsers() throws SQLException;
+    List<?> touchTable();
+
+    void removeTable();
 }

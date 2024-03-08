@@ -98,4 +98,12 @@ public class UserController {
     public List<?> findUsers() throws SQLException {
         return service.findUsers();
     }
+
+  public List<?> touchTable(Scanner scanner) {
+        return service.touchTable();
+  }
+
+    public void removeTable(Scanner scanner) {
+        service.removeTable();
+    }
 }

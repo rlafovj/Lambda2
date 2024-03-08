@@ -51,13 +51,12 @@ public class UserRepository {
     connection.close();
 
     return null;
+  }
 
+  public List<?> touchTable() {
+    return null;
+  }
 
-
-
-
-
-
-
+  public void removeTable() {
   }
 }
