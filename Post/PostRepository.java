@@ -42,7 +42,7 @@ public class PostRepository {
   }
 
   public List<?> findAll() throws SQLException {
-    List<?> ls = new ArrayList<>();
+    List<Post> ls = new ArrayList<>();
     String sql = "select * from posts";
 
     PreparedStatement pstmt = connection.prepareStatement(sql);
@@ -50,13 +50,13 @@ public class PostRepository {
     if(resultSet.next()){
       do{
 //        System.out.printf("ID : %d\t Title : %s\t Content : %s\t Writer : %s\n",
-        Post p = Post.builder()
+        ls.add(Post.builder()
                 .id(resultSet.getLong("id"))
                 .title(resultSet.getString("title"))
                 .content(resultSet.getString("content"))
                 .writer(resultSet.getString("writer"))
                 .registerDate(resultSet.getString("registerDate"))
-                .build();
+                .build());
 
       }
       while (resultSet.next());
