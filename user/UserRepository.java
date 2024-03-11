@@ -1,5 +1,7 @@
 package user;
 
+import enums.Messenger;
+
 import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +41,7 @@ public class UserRepository {
                 resultSet.getString("writer"));
       }
       while (resultSet.next());
-    }
+    }else System.out.println("데이터가 없습니다.");
 
 //    resultSet.next();
 //    String name = resultSet.getString("writer");
@@ -53,10 +55,26 @@ public class UserRepository {
     return null;
   }
 
-  public List<?> touchTable() {
-    return null;
-  }
+  public Messenger touchTable() throws SQLException {
+    String sql =  "CREATE TABLE IF NOT EXISTS members (\n" +
+            "                       id INT AUTO_INCREMENT PRIMARY KEY,\n" +
+            "                       member_name VARCHAR(20) NOT NULL,\n" +
+            "                       password VARCHAR(20) NOT NULL,\n" +
+            "                       name VARCHAR(20),\n" +
+            "                       phone_number VARCHAR(20),\n" +
+            "                       job VARCHAR(20),\n" +
+            "                       height VARCHAR(20),\n" +
+            "                       weight VARCHAR(20)\n" +
+            "\n";
+    PreparedStatement pstmt = connection.prepareStatement(sql);
+    int ex = pstmt.executeUpdate();
+    System.out.println("ex : "+ex);
 
+    pstmt.close();
+    connection.close();
+
+    return (ex == 0) ? "SUCCESS":"FAIL";
+  }
   public void removeTable() {
   }
 }

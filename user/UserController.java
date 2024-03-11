@@ -1,5 +1,7 @@
 package user;
 
+import enums.Messenger;
+
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
@@ -99,7 +101,7 @@ public class UserController {
         return service.findUsers();
     }
 
-  public List<?> touchTable(Scanner scanner) {
+  public Messenger touchTable(Scanner scanner) throws SQLException {
         return service.touchTable();
   }
 

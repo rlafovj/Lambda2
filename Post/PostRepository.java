@@ -49,7 +49,6 @@ public class PostRepository {
     ResultSet resultSet = pstmt.executeQuery();
     if(resultSet.next()){
       do{
-//        System.out.printf("ID : %d\t Title : %s\t Content : %s\t Writer : %s\n",
         ls.add(Post.builder()
                 .id(resultSet.getLong("id"))
                 .title(resultSet.getString("title"))
@@ -57,9 +56,7 @@ public class PostRepository {
                 .writer(resultSet.getString("writer"))
                 .registerDate(resultSet.getString("registerDate"))
                 .build());
-
-      }
-      while (resultSet.next());
+      } while (resultSet.next());
     } else System.out.println("No Data");
     return ls;
   }

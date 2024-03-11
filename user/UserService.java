@@ -1,5 +1,7 @@
 package user;
 
+import enums.Messenger;
+
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +19,7 @@ public interface UserService {
     String findUsernameInDB();
 
     List<?> findUsers() throws SQLException;
-    List<?> touchTable();
+    Messenger touchTable() throws SQLException;
 
     void removeTable();
 }
