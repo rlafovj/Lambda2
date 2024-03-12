@@ -1,21 +1,15 @@
 package com.linus.api;
 
-import com.linus.api.Post.PostView;
-import com.linus.api.account.AccountView;
-//import com.linus.api.auth.AuthView;
-import com.linus.api.board.BoardView;
-import com.linus.api.crawler.CrawlerView;
-import com.linus.api.user.UserView;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
+import com.linus.api.enums.Navigator;
 
 public class Main {
   public static void main(String[] args) throws IOException, SQLException {
     Scanner sc = new Scanner(System.in);
 
-    while (true){
+    while (true) {
       System.out.println("=== x-Exit " +
               "u-User " +
               "b-Board " +
@@ -23,16 +17,14 @@ public class Main {
               "c-Crawler " +
               "p-Post" +
               "===");
-      switch (sc.next()){
-        case "x":  return;
-        case "u": UserView.main(sc);break;
-        case "b": BoardView.main(); break;
-        case "a": AccountView.main(sc); break;
-        case "c": CrawlerView.main(sc); break;
-        case "p": PostView.main(sc); break;
+      Navigator np = Navigator.getNavigator(sc.next());
+      if (np != null) {
+        np.execute(sc);
+        if (np == Navigator.EXIT) {
+          break;}
+        } else System.out.println("ERROR");
       }
     }
   }
-}
 
 

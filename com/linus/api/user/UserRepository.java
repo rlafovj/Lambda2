@@ -33,7 +33,7 @@ public class UserRepository {
     return "UserRepository 연결";
   }
   public List<?> findUsers() throws SQLException {
-    String sql = "select * from board";
+    String sql = "select * from users";
 
     PreparedStatement pstmt = connection.prepareStatement(sql);
     ResultSet resultSet = pstmt.executeQuery();
@@ -56,11 +56,6 @@ public class UserRepository {
 //    String name = resultSet.getString("writer");
 //    System.out.println(name);
 
-
-    resultSet.close();
-    pstmt.close();
-    connection.close();
-
     return ls;
   }
 
@@ -73,8 +68,7 @@ public class UserRepository {
             "                       phone_number VARCHAR(20),\n" +
             "                       job VARCHAR(20),\n" +
             "                       height VARCHAR(20),\n" +
-            "                       weight VARCHAR(20)\n" +
-            "\n";
+            "                       weight VARCHAR(20)\n)";
     PreparedStatement pstmt = connection.prepareStatement(sql);
     System.out.println("ex : "+pstmt.executeUpdate());
 
