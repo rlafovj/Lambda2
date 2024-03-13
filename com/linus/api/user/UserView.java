@@ -49,12 +49,7 @@ public class UserView {
                     break;
                 case "ls":
                     System.out.println("6-회원목록");
-//                    Map<String, ?> users = controller.getUserMap();
-//                    users.forEach((k,v)->{
-//                        System.out.printf("아이디: %s, 회원정보: %s", k, v);
-//                    });
                     controller.findUsers();
-//                    users.forEach(i-> System.out.println(i));
                     break;
                 case "7":
                     System.out.println("7-이름검색");
@@ -84,10 +79,7 @@ public class UserView {
                     System.out.println("테이블 삭제 성공");
                     break;
 
-
             }
-
         }
-
     }
 }

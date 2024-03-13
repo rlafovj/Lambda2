@@ -102,9 +102,9 @@ public class UserController {
         return service.findUsers();
     }
 
-  public Messenger touchTable() throws SQLException {
+    public Messenger touchTable() throws SQLException {
         return service.touchTable();
-  }
+    }
 
     public void removeTable(Scanner scanner) {
         service.removeTable();

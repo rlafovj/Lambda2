@@ -36,8 +36,8 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     @Override
     public String login(User user) {
         return users.getOrDefault(user.getUsername(), User.builder()
-                                .password("")
-                                .build())
+                        .password("")
+                        .build())
                 .getPassword()
                 .equals(user.getPassword()) ?
                 "로그인 성공" : "로그인 실패";
