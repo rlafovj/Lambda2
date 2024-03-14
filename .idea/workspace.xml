@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a766229-ef27-4e40-ac1b-fd52c9a7c625" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/linus/api/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/linus/api/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/linus/api/enums/NavigatorOfConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/linus/api/enums/NavigatorOfConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/linus/api/enums/NavigatorOfFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/linus/api/enums/NavigatorOfFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/linus/api/enums/NavigatorOfPredicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/linus/api/enums/NavigatorOfPredicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/linus/api/strategy/Weekend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/linus/api/strategy/Weekend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/linus/api/strategy/WeekendStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/linus/api/strategy/WeekendStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/linus/api/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/linus/api/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/linus/api/user/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/linus/api/user/UserView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +24,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -70,6 +76,7 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true",
     "애플리케이션.Main.executor": "Run",
+    "애플리케이션.Weekend.executor": "Run",
     "애플리케이션.com.linus.api.Main.executor": "Run"
   },
   "keyToStringList": {
@@ -102,10 +109,23 @@
       <recent name="member" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ItemTest.add">
+  <component name="RunManager" selected="애플리케이션.com.linus.api.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Lambda" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Weekend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.linus.api.strategy.Weekend" />
+      <module name="Lambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.linus.api.strategy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,9 +176,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.com.linus.api.Main" />
+        <item itemvalue="애플리케이션.Weekend" />
         <item itemvalue="JUnit.ItemTest.add" />
         <item itemvalue="JUnit.ItemTest" />
-        <item itemvalue="애플리케이션.com.linus.api.Main" />
         <item itemvalue="애플리케이션.Main" />
       </list>
     </recent_temporary>
@@ -189,7 +210,7 @@
       <workItem from="1710376154797" duration="6663000" />
       <workItem from="1710383076834" duration="506000" />
       <workItem from="1710383592543" duration="157000" />
-      <workItem from="1710383757521" duration="6634000" />
+      <workItem from="1710383757521" duration="16782000" />
     </task>
     <servers />
   </component>

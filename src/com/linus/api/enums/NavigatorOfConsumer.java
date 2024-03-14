@@ -4,12 +4,12 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 
 public class NavigatorOfConsumer {
-  Exit("x", i -> "s"),
-  User("u", i -> "s"),
-  Board("b", i -> "s"),
-  Account("a", i -> "s"),
-  Crawler("c", i -> "s"),
-  Post("p", i -> "s")
+//  Exit("x", i -> "s"),
+//  User("u", i -> "s"),
+//  Board("b", i -> "s"),
+//  Account("a", i -> "s"),
+//  Crawler("c", i -> "s"),
+//  Post("p", i -> "s")
   ;
 
   private final String code;

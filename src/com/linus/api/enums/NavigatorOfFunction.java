@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.function.Function;
+import java.util.stream.Stream;
 
 public enum NavigatorOfFunction {
   Exit("Exit", i -> "x"),
@@ -58,7 +59,10 @@ public enum NavigatorOfFunction {
             "c-Crawler " +
             "p-Post" +
             "===");
-    String str = sc.next();
-    return str;
+    return Stream.of(values())
+            .filter(i -> i.code.equals(sc.next()))
+            .findAny().orElseGet(()->Exit)
+            .selectMenu.apply(sc)
+            ;
   }
 }

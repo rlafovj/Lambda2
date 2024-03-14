@@ -7,12 +7,19 @@ import java.util.Scanner;
 import com.linus.api.enums.*;
 
 public class Main {
+  private static final Scanner sc = new Scanner(System.in);
   public static void main(String[] args) throws IOException, SQLException {
-    Scanner sc = new Scanner(System.in);
-    String stringFlag = NavigatorOfFunction.select(sc);
-    while(!stringFlag.equals("x"));
+
+
+//    while(true) {
+//      String stringFlag = NavigatorOfFunction.select(sc);
+//      if(stringFlag.equals("x")){
+//        break;
+//      }
+//    }
 //    NavigatorOfConsumer.select(sc);
-//    boolean booleanFlag = NavigatorOfPredicate.select(sc);
+    //boolean booleanFlag =
+    while (NavigatorOfPredicate.select(sc));
 //    while (booleanFlag);
 //    NavigatorOfSupplier.select(sc);
 

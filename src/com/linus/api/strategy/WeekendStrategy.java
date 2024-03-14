@@ -6,30 +6,29 @@ import java.util.stream.Stream;
 
 public enum WeekendStrategy {
   Monday("1", i -> "Monday"),
-  Tuesday(),
-  Wednesday(),
-  Thursday(),
-  Friday(),
-  Saturday(),
-  Sunday()
+  Tuesday("2", i -> "Tuesday"),
+  Wednesday("3", i -> "Wednesday"),
+  Thursday("4", i -> "Thursday"),
+  Friday("5", i -> "Friday"),
+  Saturday("6", i -> "Saturday"),
+  Sunday("7", i -> "Sunday"),
+  Wrong("x", i -> "Wrong")
   ;
-
   private final String name;
   private final Function<String, String> function;
 
-  public WeekendStrategy(String name, Function<String, String> function) {
+  WeekendStrategy(String name, Function<String, String> function) {
     this.name = name;
     this.function = function;
   }
 
   public static String execute(Scanner sc) {
-    System.out.println("1~7입력");
-    String s = sc.next();
-
+    System.out.println("1부터 7까지 입력");
+    String str = sc.next();
     return Stream.of(values())
-
-            .findAny().orElseGet(() -> null)
-            .function.apply(s)
+            .filter(i -> i.name.equals(str))
+            .findAny().orElseGet(()->Wrong)
+            .function.apply(str)
             ;
   }
 }

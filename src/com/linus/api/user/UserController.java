@@ -10,10 +10,12 @@ import java.util.Scanner;
 
 
 public class UserController {
+    private static UserController instance = new UserController();
 
+    public static UserController getInstance(){return instance;}
     UserServiceImpl service;
 
-    public UserController() {
+    private UserController() {
         this.service = UserServiceImpl.getInstance();
     }
 
@@ -106,7 +108,7 @@ public class UserController {
         return service.touchTable();
     }
 
-    public void removeTable(Scanner scanner) {
+    public void removeTable() {
         service.removeTable();
     }
 }
