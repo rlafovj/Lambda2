@@ -2,14 +2,22 @@ package com.linus.api;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 import com.linus.api.enums.*;
+import com.linus.api.menu.Menu;
+import com.linus.api.menu.MenuController;
+import lombok.ToString;
 
 public class Main {
   private static final Scanner sc = new Scanner(System.in);
   public static void main(String[] args) throws IOException, SQLException {
+    //MenuController.getInstance().makeMenuTable();
 
+//    Messenger msg = MenuController.getInstance().returnMessenger();
+//    Menu oneMenu = MenuController.getInstance().returnOneMenu();
+//    List<?> allMenu = MenuController.getInstance().returnAllMenus();
 
 //    while(true) {
 //      String stringFlag = NavigatorOfFunction.select(sc);

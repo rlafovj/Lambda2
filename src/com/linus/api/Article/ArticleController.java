@@ -1,13 +1,13 @@
-package com.linus.api.Post;
+package com.linus.api.Article;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class PostController {
-  private PostServiceImpl postService;
+public class ArticleController {
+  private ArticleServiceImpl postService;
 
   public void findAllPost() throws SQLException {
-    this.postService = PostServiceImpl.getInstance();
+    this.postService = ArticleServiceImpl.getInstance();
     postService.findAllPost();
   }
 

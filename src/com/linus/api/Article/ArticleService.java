@@ -1,7 +1,7 @@
-package com.linus.api.Post;
+package com.linus.api.Article;
 
 import java.sql.SQLException;
 
-public interface PostService {
+public interface ArticleService {
   void findAllPost() throws SQLException;
 }

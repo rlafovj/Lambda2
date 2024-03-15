@@ -1,4 +1,4 @@
-package com.linus.api.Post;
+package com.linus.api.Article;
 
 import com.linus.api.common.AbstractService;
 import com.linus.api.enums.Messenger;
@@ -7,17 +7,17 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-public class PostServiceImpl extends AbstractService implements PostService{
-  private PostRepository postRepository;
-  private static PostServiceImpl instance = new PostServiceImpl();
-  private PostServiceImpl(){
-    postRepository = PostRepository.getInstance();
+public class ArticleServiceImpl extends AbstractService implements ArticleService {
+  private ArticleRepository articleRepository;
+  private static ArticleServiceImpl instance = new ArticleServiceImpl();
+  private ArticleServiceImpl(){
+    articleRepository = ArticleRepository.getInstance();
   }
-  public static PostServiceImpl getInstance(){return instance;}
+  public static ArticleServiceImpl getInstance(){return instance;}
 
   @Override
   public void findAllPost() throws SQLException {
-    postRepository.findAllPost();
+    articleRepository.findAllPost();
   }
 
   @Override
@@ -27,7 +27,7 @@ public class PostServiceImpl extends AbstractService implements PostService{
 
   @Override
   public List<?> findAll() throws SQLException {
-    return postRepository.findAll();
+    return articleRepository.findAll();
   }
 
   @Override

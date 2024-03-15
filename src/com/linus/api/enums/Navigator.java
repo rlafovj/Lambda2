@@ -1,7 +1,6 @@
 package com.linus.api.enums;
 
-import com.linus.api.Main;
-import com.linus.api.Post.PostView;
+import com.linus.api.Article.ArticleView;
 import com.linus.api.account.AccountView;
 import com.linus.api.board.BoardView;
 import com.linus.api.crawler.CrawlerView;
@@ -18,7 +17,7 @@ public enum Navigator {
   BOARD("b", sc -> BoardView.main()),
   ACCOUNT("a", sc -> AccountView.main(sc)),
   CRAWLER("c", sc -> CrawlerView.main(sc)),
-  POST("p", sc -> PostView.main(sc))
+  ARTICLE("ar", sc -> ArticleView.main(sc))
   ;
   private final String code;
   private final MenuAction selectMenu;

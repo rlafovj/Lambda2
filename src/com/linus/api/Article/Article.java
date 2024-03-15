@@ -1,13 +1,11 @@
-package com.linus.api.Post;
+package com.linus.api.Article;
 
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @ToString
 
-public class Post {
+public class Article {
   private Long id;
   private String title;
   private String content;
@@ -15,7 +13,7 @@ public class Post {
   private String registerDate;
 
   @Builder(builderMethodName = "builder")
-  public Post(Long id, String title, String content, String  writer, String registerDate){
+  public Article(Long id, String title, String content, String  writer, String registerDate){
     this.id = id;
     this.title = title;
     this.content = content;

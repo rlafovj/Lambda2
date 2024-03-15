@@ -36,7 +36,7 @@ public enum NavigatorOfPredicate {
             "b-Board " +
             "a-Account " +
             "c-Crawler " +
-            "p-Post" +
+            "ar-Article" +
             "===");
     String str = sc.next();
     return Stream.of(values())

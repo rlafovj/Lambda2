@@ -1,6 +1,6 @@
 package com.linus.api.enums;
 
-import com.linus.api.Post.PostView;
+import com.linus.api.Article.ArticleView;
 import com.linus.api.account.AccountView;
 import com.linus.api.board.BoardView;
 import com.linus.api.crawler.CrawlerView;
@@ -36,7 +36,7 @@ public enum NavigatorOfFunction {
   }),
   Post("Post", i -> {
     try {
-      PostView.main(i);
+      ArticleView.main(i);
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
@@ -52,12 +52,15 @@ public enum NavigatorOfFunction {
   }
 
   public static String select(Scanner sc){
+
+    //MenuController.getInstance().getMenusByCategory("navigate").forEach(i -> System.out.println(i));
+
     System.out.println("=== x-Exit " +
             "u-User " +
             "b-Board " +
             "a-Account " +
             "c-Crawler " +
-            "p-Post" +
+            "ar-article" +
             "===");
     return Stream.of(values())
             .filter(i -> i.code.equals(sc.next()))

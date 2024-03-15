@@ -1,28 +1,28 @@
-package com.linus.api.Post;
+package com.linus.api.Article;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostRepository {
-  private static PostRepository instance;
+public class ArticleRepository {
+  private static ArticleRepository instance;
 
   static {
     try {
-      instance = new PostRepository();
+      instance = new ArticleRepository();
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
   }
 
-  PostRepository postRepository;
+  ArticleRepository articleRepository;
   private Connection connection;
 
-  private PostRepository() throws SQLException {
-    this.postRepository = PostRepository.getInstance();
+  private ArticleRepository() throws SQLException {
+    this.articleRepository = ArticleRepository.getInstance();
     this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/linusdb", "linus", "password");
   }
-  public static PostRepository getInstance(){return instance;}
+  public static ArticleRepository getInstance(){return instance;}
 
   public void findAllPost() throws SQLException {
     String sql = "select * from posts";
@@ -42,14 +42,14 @@ public class PostRepository {
   }
 
   public List<?> findAll() throws SQLException {
-    List<Post> ls = new ArrayList<>();
+    List<Article> ls = new ArrayList<>();
     String sql = "select * from posts";
 
     PreparedStatement pstmt = connection.prepareStatement(sql);
     ResultSet resultSet = pstmt.executeQuery();
     if(resultSet.next()){
       do{
-        ls.add(Post.builder()
+        ls.add(Article.builder()
                 .id(resultSet.getLong("id"))
                 .title(resultSet.getString("title"))
                 .content(resultSet.getString("content"))

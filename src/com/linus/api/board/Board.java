@@ -2,7 +2,7 @@ package com.linus.api.board;
 
 import lombok.*;
 
-@Setter
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(exclude = {"id"})
 public class Board {
